@@ -1,0 +1,29 @@
+JS Operators
+
+1. Arrithmatic operators  => (+,-,*,/,%, **, a++, ++a)
+2. Assignment operators   => (=, +=, -=, *=, /=)
+3. Comparision operators  => (==, !=, ===, !==, >, <, >=, <=)
+4. Logical operators      => (&&, ||, ??, !) // here ?? is called nullish qualishing operator
+
+			  op1 && op2 // if op1 is truthy value then return op2. otherwise return op1.
+				console.log("cow" && "horse") // horse
+
+		          op1 || op2 // if op1 is truthy value then return op1. otherwise return op2.
+				console.log("cow" && "horse") // cow
+
+			  op1 ?? op2 // if op1 is null or undefined then return op2. otherwise return op1
+			
+			  console.log(!true) // false
+			  console.log(!false) // true		
+
+5. Conditional (ternary) operator => condition ? value1 : value2 // if condition is true then return value1, otherwise return value2  
+
+6. Bitwise operators   => ( &, |, ^, ~, <<, >>)
+
+7. typeof
+	
+	typeof 190 // number
+	typeof "abc" // string
+	typeof null //object
+
+8. instanceoff
