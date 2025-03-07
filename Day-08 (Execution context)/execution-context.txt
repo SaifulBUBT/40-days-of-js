@@ -1,0 +1,33 @@
+What is laxical environment?
+Laxical environment means how and where your code is physically placed.
+
+What is execution context?
+Execution context means the code that is currently running and everything surrunding to that is helping
+to run it. 
+
+What is context?
+Context means a set of circumstances or the fact that helps running certain events or taking care of
+certain situation. context give you more information about an events or situation.
+
+
+What is global execution context?
+Anything or everything outside of function is global.
+
+global execution context (GEC)
+    Creation phase
+    1. window object
+    2. this keyword
+    3. window === this //true
+
+        var name = "Tom"
+        function sayName(){
+            console.log(this.name);
+        }
+
+    4. allocate memory for variable name function sayName()
+    5. variable name will be initialized by undefined.
+    6. the function body will be placed directly into memory.
+
+
+    Execution Phase:
+    1. it will assign the value "Tom" to the variable name;
