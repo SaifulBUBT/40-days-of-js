@@ -15,7 +15,7 @@ user["movie lover"] = false;
 //delete user.age;
 
 console.log(user);
-console.log(user["is admin"]); // uese subscript notation to access this property.
+console.log(user["is admin"]); // use subscript notation to access this property.
 
 
 const someKey = 'age'
@@ -115,11 +115,11 @@ console.log(Object.keys(profile));
 let fruit = {name: "mango"};
 let oneMoreFruit = {name: "mango"};
 
-console.log(fruit === oneMoreFruit);
+console.log(fruit === oneMoreFruit); //false
 
 fruit = oneMoreFruit;
 
-console.log(fruit === oneMoreFruit);
+console.log(fruit === oneMoreFruit); //true
 
 
 
@@ -150,8 +150,8 @@ const obj1 = {
 
 obj2 = Object.assign({}, obj1);
 obj1.b.c = 10;
-console.log(obj2.b.c);
-console.log(obj1.b.c);
+console.log(obj2.b.c); //10
+console.log(obj1.b.c); //10
 
 
 //structuredClone()
