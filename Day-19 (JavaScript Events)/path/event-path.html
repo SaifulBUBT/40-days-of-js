@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling, Capturing and Deligation</title>
+    <script src="./event-path.js" defer></script>
+</head>
+<body>
+    <h2>Event Bubbling, Capturing and Deligation</h2>
+
+    <div id="grandparent">
+        <div id="parent">
+            <button id="child">Click Me</button>
+        </div>
+    </div>
+
+    <hr />
+    <ul id="itemList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <hr />
+    <!-- <button data-toggle-id="registration-form">
+        Open Registration Form
+    </button>
+
+    <hr /> -->
+
+    <div id="father" style="padding:30px; background:#cfd8dc;">
+        Parent
+        <button id="son" style="margin:10px;">Click Me</button>
+    </div>
+</body>
+</html>

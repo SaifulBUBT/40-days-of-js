@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Event Delegation</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>ইভেন্ট ডেলিগেশন কি?</h1>
+
+            <p>
+                একাধিক এলিমেন্টের জন্য
+                <span class="highlight">একটাই ইভেন্ট লিসেনার রাখা</span> এবং
+                <span class="highlight">নতুন এলিমেন্ট</span> যোগ করলেও যেন
+                লিসেনার কাজ করে।
+            </p>
+
+            <div class="languages">
+                <ul id="list">
+                    <li>JavaScript</li>
+                    <li>PHP</li>
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>TypeScript</li>
+                </ul>
+
+                <div>
+                    <input type="text" name="language" id="language-id" placeholder="Enter new language.." />
+                    <button id="add-btn">
+                        নতুন এলিমেন্ট যোগ করুন
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="./deligation.js"></script>
+    </body>
+</html>
