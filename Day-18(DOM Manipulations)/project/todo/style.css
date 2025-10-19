@@ -1,0 +1,16 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+li.completed {
+  text-decoration: line-through;
+}
+.utility-btn {
+  cursor: pointer;
+  margin-left: 6px;
+}
