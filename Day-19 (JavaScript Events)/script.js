@@ -23,6 +23,16 @@ countBtnElem.addEventListener('click', greetings)
 // countBtnElem.removeEventListener("click", handleCount);
 
 
+let counter2 = 0;
+const handleCount2 = function() {
+    console.log("Counter 2:", counter2);
+    counter2++;
+}
+const countBtn2Elem = document.getElementById("countBtn2");
+countBtn2Elem.addEventListener("click", handleCount2)
+
+//countBtn2Elem.removeEventListener("click", handleCount2);
+
 //DOM Content loaded
 
 document.addEventListener('DOMContentLoaded', function(){

@@ -29,6 +29,14 @@ try {
 
 // Static Methods
 
+class MyClass {
+  static staticMethod() {
+    console.log(this)
+  }
+}
+
+MyClass.staticMethod()
+
 class User {
   constructor(name, email) {
     this.name = name;
@@ -54,4 +62,10 @@ console.log(guestUser.getInfo());
 
 // Private Fields and Methods
 
-
+class WashingMachine {
+  startWash() {
+    this.#fillWater();
+    console.log('Washing started');
+  }
+  
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Event</title>
+  </head>
+  <body>
+    <button id="myButton">Click me!</button>
+
+    <p id="output"></p>
+
+    <script>
+      const button = document.getElementById("myButton");
+      const output = document.getElementById("output");
+
+      const tutorialInfo = {
+        date: new Date(),
+        topic: "Custom Events in JavaScript",
+        tutor: "Jane Doe",
+      };
+      const myEvent = new CustomEvent("tutorialEvent", {
+        detail: tutorialInfo,
+      });
+
+      document.addEventListener("tutorialEvent", (event) => {
+        const { date, topic, tutor } = event.detail;
+        output.textContent = `Tutorial on "${topic}" by ${tutor} held on ${date.toDateString()}.`;
+      });
+      button.addEventListener("click", () => {
+        document.dispatchEvent(myEvent);
+      });
+    </script>
+  </body>
+</html>

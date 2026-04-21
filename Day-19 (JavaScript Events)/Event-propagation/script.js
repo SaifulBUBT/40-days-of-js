@@ -3,7 +3,6 @@ const form = document.getElementById('form');
 const button = document.getElementById('button');
 
 
-
 function listener(event) {
     // console.log(event.target);
     console.log(event.currentTarget);    
@@ -12,3 +11,5 @@ function listener(event) {
 parent.addEventListener('click', listener);
 form.addEventListener('click', listener, true);
 button.addEventListener('click', listener);
+
+

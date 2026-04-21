@@ -12,9 +12,8 @@ document.addEventListener('userLoggedIn', (e) => {
     
 })
 
-// Step 3: Dispatching the Custom Event
+// Step 3: Dispatching the Custom Event / Registering the Event
 document.dispatchEvent(myEvent);
-
 
 //*********************** */
 
@@ -31,3 +30,26 @@ document.addEventListener('userLoggedIn', (e) => {
 })
 
 
+
+// create custom events
+const catFound = new CustomEvent('animalFound', {
+    detail: {
+        name: 'Cat',
+    }
+})
+
+const dogFound = new CustomEvent('animalFound', {
+    detail: {
+        name: 'Dog',
+    }
+})
+
+const element = document.createElement('div');
+
+element.addEventListener('animalFound', (e) => {
+    console.log(`You have found a ${e.detail.name}`);
+})
+
+// dispatch the custom events
+element.dispatchEvent(catFound);
+element.dispatchEvent(dogFound);
