@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Components</title>
+
+    <style>
+      label {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <custom-component name="Email" id="email"></custom-component>
+    <custom-component name="Password" id="password"></custom-component>
+
+    <button onclick="getAccess()">Get Access</button>
+
+    <script>
+      class CustomComponent extends HTMLElement {
+        constructor() {
+          super();
+        }
+        connectedCallback() {
+          const name = this.getAttribute("name");
+          const id = this.getAttribute("id");
+
+          const shadow = this.attachShadow({ mode: "open" });
+
+          shadow.innerHTML = `
+            <style>
+                label {
+                    color: green;
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+            </style>
+
+            <label for="${id}">${name}: </label>
+            <input type="text" name="${name}" id="${id}" ><br>
+          `;
+        }
+      }
+      customElements.define("custom-component", CustomComponent);
+
+      function getAccess() {
+        const email = document
+          .getElementById("email")
+          .shadowRoot.querySelector("input").value;
+        const password = document
+          .getElementById("password")
+          .shadowRoot.querySelector("input").value;
+
+        console.log(`Email: ${email}, Password: ${password}`);
+      }
+    </script>
+  </body>
+</html>
