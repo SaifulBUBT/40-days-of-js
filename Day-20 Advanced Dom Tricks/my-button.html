@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom element</title>
+  </head>
+  <body>
+    <div>
+      <button>html button</button>
+    </div>
+    <my-button>Click me</my-button>
+
+    <script>
+      class MyButton extends HTMLElement {
+        constructor() {
+          super();
+          this.shadow = this.attachShadow({ mode: "open" });
+        }
+
+        connectedCallback() {
+          const button = document.createElement("button");
+          button.textContent = this.textContent;
+
+          this.shadow.appendChild(this.#createStyle());
+          this.shadow.appendChild(button);
+        }
+
+        #createStyle() {
+          const style = document.createElement("style");
+          style.textContent = `
+            button {
+              background-color: blue;
+              color: white;
+              border: none;
+              padding: 10px 20px;
+              font-size: 16px;
+              cursor: pointer;
+            }
+            button:hover {
+              background-color: darkblue;
+            }
+          `;
+          return style;
+        }
+      }
+
+      customElements.define("my-button", MyButton);
+    </script>
+  </body>
+</html>

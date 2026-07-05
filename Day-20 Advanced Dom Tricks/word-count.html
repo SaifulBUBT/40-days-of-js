@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Count</title>
+  </head>
+  <body>
+    <article>
+      <p>
+        lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <h2>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae,
+        ab sapiente. Consequatur corrupti ipsa numquam deserunt blanditiis
+        assumenda natus similique.
+      </h2>
+
+      <p is="word-count"></p>
+    </article>
+
+    <div>
+      <p>lorem ipsum dolor sit amet</p>
+      <p is="word-count"></p>
+    </div>
+
+    <script>
+      class WordCount extends HTMLParagraphElement {
+        constructor() {
+          super();
+          this.shadow = this.attachShadow({ mode: "open" });
+        }
+
+        connectedCallback() {
+          const count = this.#countWords(this.parentNode);
+          const span = document.createElement("span");
+          span.textContent = `Word Count: ${count}`;
+          this.shadow.appendChild(span);
+        }
+
+        #countWords(node) {
+          const text = node.innerText || node.textContent;
+          return text
+            .trim()
+            .split(/\s+/g)
+            .filter((word) => word.length > 0).length;
+        }
+      }
+
+      customElements.define("word-count", WordCount, { extends: "p" });
+    </script>
+  </body>
+</html>
