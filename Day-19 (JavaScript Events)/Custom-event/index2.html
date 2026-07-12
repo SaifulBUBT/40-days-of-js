@@ -17,18 +17,19 @@
       const tutorialInfo = {
         date: new Date(),
         topic: "Custom Events in JavaScript",
-        tutor: "Jane Doe",
+        tutor: "Jone Doe",
       };
       const myEvent = new CustomEvent("tutorialEvent", {
         detail: tutorialInfo,
       });
 
+      button.addEventListener("click", () => {
+        document.dispatchEvent(myEvent);
+      });
+
       document.addEventListener("tutorialEvent", (event) => {
         const { date, topic, tutor } = event.detail;
         output.textContent = `Tutorial on "${topic}" by ${tutor} held on ${date.toDateString()}.`;
-      });
-      button.addEventListener("click", () => {
-        document.dispatchEvent(myEvent);
       });
     </script>
   </body>
